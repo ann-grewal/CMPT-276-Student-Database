@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <style> 
+        body {
+           font-family: Arial, Helvetica, sans-serif;
+           color: black; 
+           font-weight: normal;
+        }
+        input {
+            border-style: solid;
+            box-shadow: none;
+            padding-right: 1vw;
+            padding-left: 1vw;
+            padding-bottom: 1vw;
+            padding-top: 1vw;
+            text-decoration: none;
+            background-color: white;
+        }
+        a {
+            border-style: solid;
+            padding-right: 1vw;
+            padding-left: 1vw;
+            padding-bottom: 2vw;
+            padding-top: 1vw;
+            text-decoration: none;
+            display: block; 
+            width: 75vw; 
+            height: 0.5vw; 
+            border-color: black; 
+            border-width: 0.5pt;
+            color: black; 
+            font-size: 1.5vw;
+        }
+        a:hover {
+            background-color:whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>ALL USERS</h1>
+        <a href = "/add.html">ADD A NEW UNIT</a><br> 
+        <form th:each="user:${us}" action="/users/edit" method="get">
+            <input id="label" name="label" type="submit"  th:value="${user.name} + ', ' + ${user.gpa}" th:style="'width:'+${user.weight}+'pt'+';height:'+${user.height}+'pt'+';border-color:'+${user.color}">
+        <form> 
+        </ul>
+    </center>
+</body>
+</html>

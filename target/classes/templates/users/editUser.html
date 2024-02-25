@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <style>
+        body {
+           font-family: Arial, Helvetica, sans-serif;
+           color: black; 
+        }
+    	input {
+            display: block; 
+            height: 2.5vw; 
+            width: 40vw; 
+        }
+    </style> 
+</head>
+<body>
+    <center>
+		<h1>Edit User</h1>
+		<form th:each="user:${us}" action="/users/update" method="post">
+            <input type="hidden" id="editName" name = "editName" th:value="${user.name}">
+            <input type="text" id="color" name="color" th:value="${user.color}"><br>
+			<input type="text" id="major" name="major" th:value="${user.major}"><br>
+            <input type="number" id="weight" name="weight" th:value="${user.weight}"><br>
+            <input type="number" id="height" name="height" th:value="${user.height}"><br>
+            <input type="text" id="gpa" name="gpa" th:value="${user.gpa}"><br>
+            <input type="submit" value="UPDATE"></input>
+		</form><br>
+        <form th:each="user:${us}" action="/users/delete" method="post">
+            <input type="hidden" id="removeName" name = "removeName" th:value="${user.name}">
+            <input type="submit" value="DELETE"></input>
+        </form>
+	</center>
+</body>
+</html>
