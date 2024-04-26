@@ -1,4 +1,4 @@
-**CMPT 276 - Assignment 2**
+**CMPT 276 - Student Database**
 Add, remove, and edit students from a database by web access. Both site and database hosted on Render (by Docker). 
 Main page displays students and their gpa according to specified height, weight, and color. 
 Condition that all student names must be unique (and unedited). 
